@@ -13,8 +13,6 @@ run(Flavor runFlavor) async {
 }
 
 
-//flavors are created in the flavor_config.dart file
-
 @swidget
 Widget chatApp(BuildContext context) {
   return MaterialApp(
