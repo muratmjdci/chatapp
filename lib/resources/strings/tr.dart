@@ -4,7 +4,7 @@ import '../../locator.dart';
 import 'asset_map.dart';
 
 enum Tr {
-  empty;
+  popupButtonText;
 
   const Tr();
 
