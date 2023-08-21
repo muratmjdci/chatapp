@@ -1,17 +1,13 @@
-# chatappocr
+## Adding a new page
 
-A new Flutter project.
+Note: Before this step you need to install [mason cli](https://pub.dev/packages/mason_cli).
+After installation execute `mason get` command to get `page` brick.
 
-## Getting Started
+1. Generate page with mason generator as below. This generates view folder, view function, generated view class and view
+   model.
 
-This project is a starting point for a Flutter application.
+```
+ mason make page --name <page_name_snake_case>
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# chatapp
+2. Follow created content directives to add page to route
