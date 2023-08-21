@@ -1,3 +1,4 @@
+import 'package:chatappocr/locator.dart';
 import 'package:chatappocr/resources/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
@@ -10,6 +11,8 @@ part 'main.g.dart';
 run(Flavor runFlavor) async {
   WidgetsFlutterBinding.ensureInitialized();
   flavor = runFlavor;
+  configureDependencies();
+  await initDependencies();
   runApp(const ChatApp());
 }
 
