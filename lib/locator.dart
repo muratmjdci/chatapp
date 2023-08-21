@@ -1,3 +1,5 @@
+import 'package:chatappocr/services/persistence_service.dart';
+
 import 'locator.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
@@ -9,6 +11,7 @@ import 'services/navigator_service.dart';
 configureDependencies() => sl.init();
 
 initDependencies() async {
+  await sl<PersistenceService>().init();
   await sl<AssetMap>().init();
 }
 

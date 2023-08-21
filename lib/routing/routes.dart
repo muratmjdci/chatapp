@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import '../locator.dart';
 import '../resources/d_text_styles.dart';
 import '../resources/strings/tr.dart';
+import '../view/chat/chat_view.dart';
 import '../view/choose_username/choose_username_view.dart';
-
-
 
 ///enum for all routes in the app
 ///to navigate use Routes.chat();
 ///to navigate with extra arguments use Routes.chat.call([args]);
 enum Routes<P> {
-  chooseUsername(ChooseUsernameView.new);
+  chooseUsername(ChooseUsernameView.new, title: Tr.setUserNameTitle),
+  chat(ChatView.new);
 
   final bool wrap;
   final String? logo;
@@ -38,10 +38,10 @@ enum Routes<P> {
   /// navigates back to the route before the current route
   /// example; Routes.chat.goBackUntil()
   void returnBack() => navigator.goBackUntil(this);
+
   /// converts the route to a uri
   Uri toUri({P? data}) => Uri(path: name, queryParameters: data != null ? {'q': _map(data)} : null);
 }
-
 
 ///parsing data to string because uri can only contain strings
 ///example; if the type is int, it will parse the int to string

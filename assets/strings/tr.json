@@ -1,3 +1,8 @@
 {
+  "setUserNameTitle": "Set User Name",
+  "setUserNameButton" : "Set User Name",
+  "setUserNameLabel" : "Username",
+  "popupTitleError": "Error",
+  "usernameInvalid": "Username is invalid",
   "popupButtonText": "Ok"
 }
