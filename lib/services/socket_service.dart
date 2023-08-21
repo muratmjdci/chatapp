@@ -11,9 +11,11 @@ import 'package:retry/retry.dart';
 import 'package:stacked/stacked.dart';
 import 'package:web_socket_channel/io.dart';
 
+import '../data/socket_commands.dart';
 import '../flavor_config.dart';
 import '../locator.dart';
 import '../resources/strings/tr.dart';
+import 'chat_service.dart';
 import 'connectivity_service.dart';
 
 const int _minRetryAttempts = 5;
@@ -78,8 +80,21 @@ class SocketService {
 
   /// all the socket events are handled here
   _newEvent(event) {
-
+    log('Socket Event: $event');
+    late final IncomingSocketCommand command;
+    try {
+      command = IncomingSocketCommand.fromJson(jsonDecode(event.trim()));
+    } catch (e) {
+      if (event is String) {
+        return navigator.dialog(title: Tr.popupTitleError(), description: "unhandled socket event \n $event");
+      }
+    }
+    return switch (command) {
+      IncomingChatCommand() => sl<ChatService>().onNewMessage(command),
+      _ => log('Unhandled Socket Event: $event')
+    };
   }
+
 
   ///tries to connect to the socket
   ///if the connection fails, it will retry to connect
@@ -128,7 +143,7 @@ class SocketService {
   }
 
   ///send a command to the socket
-  send(action) {
+  send(OutGoingSocketCommand action) {
     log('Socket Send: $action $_channel');
     if (_channel == null) return;
     final json = action.toJson();

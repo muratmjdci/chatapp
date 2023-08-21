@@ -12,7 +12,7 @@ import '../view/choose_username/choose_username_view.dart';
 ///to navigate with extra arguments use Routes.chat.call([args]);
 enum Routes<P> {
   chooseUsername(ChooseUsernameView.new, title: Tr.setUserNameTitle),
-  chat(ChatView.new);
+  chat(ChatView.new, wrap: false);
 
   final bool wrap;
   final String? logo;

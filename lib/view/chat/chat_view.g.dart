@@ -17,3 +17,27 @@ class ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext _context) => chatView(data);
 }
+
+class _ChatView extends StatelessWidget {
+  const _ChatView(
+    this.model, {
+    Key? key,
+  }) : super(key: key);
+
+  final ChatViewModel model;
+
+  @override
+  Widget build(BuildContext _context) => __chatView(model);
+}
+
+class _MessageBox extends StatelessWidget {
+  const _MessageBox(
+    this.model, {
+    Key? key,
+  }) : super(key: key);
+
+  final ChatViewModel model;
+
+  @override
+  Widget build(BuildContext _context) => __messageBox(model);
+}

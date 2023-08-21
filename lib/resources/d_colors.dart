@@ -14,3 +14,16 @@ class DColors {
   static const redBackground = Color(0xFFFCE8DB);
   static const lightWhite = Color(0xFFE1E1E1);
 }
+
+@immutable
+class Color2 {
+  final Color first;
+  final Color second;
+  static const primary = Color2(first: DColors.primary);
+
+  const Color2({Color? first, Color? second})
+      : first = first ?? Colors.transparent,
+        second = second ?? Colors.transparent;
+
+  Color2 withItem1(Color first) => Color2(first: first, second: second);
+}
