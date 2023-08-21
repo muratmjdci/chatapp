@@ -4,5 +4,6 @@
   "setUserNameLabel" : "Username",
   "popupTitleError": "Error",
   "usernameInvalid": "Username is invalid",
-  "popupButtonText": "Ok"
+  "popupButtonText": "Ok",
+  "errorSocketConnection": "Error connecting to server"
 }

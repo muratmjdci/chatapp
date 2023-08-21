@@ -4,12 +4,14 @@ import '../../locator.dart';
 import 'asset_map.dart';
 
 enum Tr {
+
   setUserNameTitle,
   setUserNameLabel,
   setUserNameButton,
   popupTitleError,
   usernameInvalid,
-  popupButtonText;
+  popupButtonText,
+  errorSocketConnection;
 
   const Tr();
 
