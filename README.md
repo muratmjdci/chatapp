@@ -31,6 +31,6 @@ After installation execute `mason get` command to get `page` brick.
 We are using functional_widget package to create widgets. To create a new widget follow the steps below:
 1. Create a new dart file under `lib/widgets` folder. or use main view page
 2. Add `part 'your_file_name.g.dart';` to the top of the file
-3. Create a function and Add `@widget` annotation to the function
+3. Create a function and Add `@swidget` annotation to the function if you need hooks add `@hwidget`
 4. Run `dart run build_runner build --delete-conflicting-outputs` command to generate the widget
 5. Functional widget will generate ``` StatelessWidget ``` with the name of the function. You can use this widget in your code.
